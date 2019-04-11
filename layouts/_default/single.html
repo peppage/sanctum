@@ -1,13 +1,15 @@
 {{ define "main" }}
-<article class="pb5">
-    <header class="tc-l ph3 ph4-ns pt4 pt5-ns">
-        <h1 class="f3 f2-m f-subheadline-l measure 1h-title fw1 mt0">
-            {{ .Title }}
-        </h1>
-        <img class="w-100 dib measure f3" src="{{ .Params.image }}"
-            alt="{{ .Params.alt }}">
+<article class="helvetica pb5">
+    <header class="vh-100 bg-light-grey dt w-100 pb4">
+        <div
+            style="background:url({{ .Params.image }}) no-repeat center right; background-size: cover;"
+            class="dtc v-mid cover ph3 ph4-m ph5-l">
+            <h1 class="f2 f-subheadline-l measure lh-title fw9 absolute" style="left:50px;bottom:50px;">
+                {{ .Title }}
+            </h1>
+        </div>
     </header>
-    <div class="ph3 ph4-m ph4-l">
+    <div class="">
         {{ replace .Content "<p>" "<p class='f6 f4-ns lh-copy measure center'>" | safeHTML }}
     </div>
 </article>

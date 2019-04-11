@@ -1,5 +1,5 @@
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ .Scratch.Set "image" ($original.Resize "1080x") }}
+{{ .Scratch.Set "image" ($original.Resize "1440x") }}
 {{ $imageLg := .Scratch.Get "image" }}
 
 {{ .Scratch.Set "image" ($original.Resize "800x") }}
@@ -15,5 +15,5 @@
           media="(min-width: 750px)">
   <img srcset="{{ $imageSm.RelPermalink }}" 
        alt=""
-       class="db mv4 mv5-ns center">
+       class="db mv4 mv5-ns w-100">
 </picture>
