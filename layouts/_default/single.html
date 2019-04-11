@@ -8,9 +8,7 @@
             alt="{{ .Params.alt }}">
     </header>
     <div class="ph3 ph4-m ph4-l">
-        <div class="measure db center f5 f4-ns lh-copy">
-            {{ .Content }}
-        </div>
+        {{ replace .Content "<p>" "<p class='f6 f4-ns lh-copy measure center'>" | safeHTML }}
     </div>
 </article>
 

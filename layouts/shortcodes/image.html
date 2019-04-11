@@ -1,4 +1,19 @@
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ .Scratch.Set "image" ($original.Resize "600x") }}
-{{ $image := .Scratch.Get "image" }}
-<img class="db w-100 mt4 mt5-ns" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+{{ .Scratch.Set "image" ($original.Resize "1080x") }}
+{{ $imageLg := .Scratch.Get "image" }}
+
+{{ .Scratch.Set "image" ($original.Resize "800x") }}
+{{ $imageMed := .Scratch.Get "image" }}
+
+{{ .Scratch.Set "image" ($original.Resize "400x q50") }}
+{{ $imageSm := .Scratch.Get "image" }}
+
+<picture>
+  <source srcset="{{ $imageLg.RelPermalink }}"
+          media="(min-width: 990px)">
+  <source srcset="{{ $imageMed.RelPermalink }}"
+          media="(min-width: 750px)">
+  <img srcset="{{ $imageSm.RelPermalink }}" 
+       alt=""
+       class="db mv4 mv5-ns center">
+</picture>
