@@ -1,0 +1,7 @@
+{{ define "main" }}
+
+{{ range (where .Site.Pages "Type" "pages") }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}
+
+{{ end }}
