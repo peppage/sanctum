@@ -1,7 +1,13 @@
 {{ define "main" }}
 
-{{ range (where .Site.Pages "Type" "pages") }}
-<a href="{{ .Permalink }}">{{ .Title }}</a>
-{{ end }}
+    {{ range (where .Site.Pages "Type" "pages") }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
 
+    <section class="mw7 center avenir">
+        {{ range (.Paginator 5).Pages }}
+                {{ partial "post_list_item.html" .}}
+        {{ end }}
+        {{ partial "pager.html" . }}
+    </section>
 {{ end }}
