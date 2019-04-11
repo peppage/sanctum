@@ -1,2 +1,17 @@
 {{ define "main" }}
+<article class="pb5">
+    <header class="tc-l ph3 ph4-ns pt4 pt5-ns">
+        <h1 class="f3 f2-m f-subheadline-l measure 1h-title fw1 mt0">
+            {{ .Title }}
+        </h1>
+        <img class="w-100 dib measure f3" src="{{ .Params.image }}"
+            alt="{{ .Params.alt }}">
+    </header>
+    <div class="ph3 ph4-m ph4-l">
+        <div class="measure db center f5 f4-ns lh-copy">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+
 {{ end }}
