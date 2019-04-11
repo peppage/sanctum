@@ -1,0 +1,4 @@
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ .Scratch.Set "image" ($original.Resize "600x") }}
+{{ $image := .Scratch.Get "image" }}
+<img class="db w-100 mt4 mt5-ns" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
