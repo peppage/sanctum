@@ -25,5 +25,24 @@
 		{{ template "_internal/google_analytics_async.html" . }}
 	{{ end }}
 
+	<style>
+		.youtube {
+			height: 32vh;
+			width: 100%;
+		}
+		@media (min-width: 750px) {
+			.youtube {
+				height: 42vh;
+				width: 100%;
+			}
+		}
+		@media (min-width: 990px) {
+			.youtube {
+				height: 23em;
+				width: 44em;
+			}
+		}
+	</style>
+
 	{{ partial "custom_head.html"}}
 </head>
