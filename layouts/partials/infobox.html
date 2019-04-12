@@ -1,0 +1,32 @@
+<aside class="f6 f4-ns lh-copy w-60 center bg-black-10 pa4">
+    <section class="flex items-center justify-between">
+        <div class="flex-column mh2">
+            <div class="mb4">
+                <h3>Liked</h3>
+                {{ .Params.liked }}
+            </div>
+            <div class="">
+                <h3>Disliked</h3>
+                {{ .Params.disliked }}
+            </div>
+            <div class="mv4">
+                <h3>Played</h3>
+                {{ .Params.played }}
+            </div>
+        </div>
+        <div class="flex-column">
+            <div class="mv4">
+                <h3>Developer</h3>
+                {{ .Params.developer }}
+            </div>
+            <div class="mv4">
+                <h3>Release Date</h3>
+                {{ .Params.release }}
+            </div>
+            <div class="mv4">
+                <h3>Price</h3>
+                {{ .Params.price }}
+            </div>
+        </div>
+    </section>
+</aside>

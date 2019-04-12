@@ -12,5 +12,6 @@
     <div class="">
         {{ replace .Content "<p>" "<p class='f6 f4-ns lh-copy measure center'>" | safeHTML }}
     </div>
+    {{ partial "infobox.html" .}}
 </article>
 {{ end }}
