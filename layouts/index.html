@@ -5,9 +5,8 @@
     {{ end }}
 
     <section class="mw7 center">
-        {{ range (.Paginator 5).Pages }}
+        {{ range (.Paginator 3).Pages }}
             {{ partial "post_list_item.html" .}}
         {{ end }}
-        {{ partial "pager.html" . }}
     </section>
 {{ end }}
