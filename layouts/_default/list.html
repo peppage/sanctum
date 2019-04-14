@@ -1,7 +1,13 @@
 {{ define "main" }}
+    <main class="flex flex-column min-vh-100 center mw8">
+        {{ partial "sidebar.html" .}}
+        <article class="relative pb4 ml6-ns ml0-s">
+            <h1>{{ .Title}}</h1>
 
-{{ range.Data.Pages }}
-<a href="{{ .Permalink }}">{{ .Title }}</a>
-{{ end }}
+            {{ range.Data.Pages }}
+                <a class="db" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+        </article>
+    </main>
 
 {{ end }}

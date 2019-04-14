@@ -1,33 +1,36 @@
 {{ define "main" }}
-
-    {{ range (where .Site.Pages "Type" "pages") }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-
-    <section class="mw7 center">
-        <h2>Latest</h2>
-        {{ range (.Paginator 3).Pages }}
-            {{ partial "post_list_item.html" .}}
-        {{ end }}
-    </section>
-    <section class="mw7 center">
-        <h2>By Type</h2>
-        <div class="flex flex-wrap">
-            {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies.types }}
-                <div class="w-33">
-                    <h3>{{ $taxonomy_term | humanize }}</h3>
-                    <div class="dtc-ns tc pr4">
-                        <ul class="pl3">
-                        {{ range (first 10 $taxonomy.Pages) }}
-                            <li><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
-                        {{ end }}
-                        </ul>
-                        {{ if gt (len $taxonomy.Pages) 10 }}
-                            <a href="/types/{{ $taxonomy_term }}">See more</a>
-                        {{ end }}
-                    </div>
+    <main class="flex flex-column min-vh-100 center mw8">
+        {{ partial "sidebar.html" . }}
+        <article class="relative pb4 ml6-ns ml0-s">
+            <div class="mw7 center lh-copy f4-ns">
+                {{ .Content }}
+            </div>
+            <section id="latest" class="mw7 center">
+                <h2>Latest</h2>
+                {{ range (.Paginator 3).Pages }}
+                    {{ partial "post_list_item.html" .}}
+                {{ end }}
+            </section>
+            <div class="mw7 center">
+                <h2>By Type</h2>
+                <div class="flex flex-wrap">
+                    {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies.types }}
+                        <section id="{{ $taxonomy_term }}" class="w-33">
+                            <h3>{{ $taxonomy_term | humanize }}</h3>
+                            <div class="dtc-ns tc pr4">
+                                <ul class="pl3">
+                                {{ range (first 10 $taxonomy.Pages) }}
+                                    <li><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+                                {{ end }}
+                                </ul>
+                                {{ if gt (len $taxonomy.Pages) 10 }}
+                                    <a href="/types/{{ $taxonomy_term }}">See more</a>
+                                {{ end }}
+                            </div>
+                        </section>
+                    {{ end }}
                 </div>
-            {{ end }}
-        </div>
-    </section>
+            </div>
+        </article>
+    </main>
 {{ end }}

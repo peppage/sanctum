@@ -1,0 +1,11 @@
+<div id="sidebar" class="small-caps absolute-ns absolute-m pr3 pl1 w-100-s">
+    <a id="logo" href="/" class="mt2 mb4 db">
+        <img src="{{ .Site.Params.logo }}" />
+    </a>
+    <a href="/" class="db">Home</a>
+    {{ range (where .Site.Pages "Type" "pages") }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    <a href="/tags" class="db">Tags</a>
+    <a href="/types" class="db">Game Types</a>
+</div>
