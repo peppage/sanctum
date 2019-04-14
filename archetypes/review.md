@@ -9,4 +9,7 @@ price: ''
 played: 'hours'
 liked: ''
 disliked: ''
+types: []
+games: []
+tags: []
 ---
