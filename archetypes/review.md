@@ -2,7 +2,7 @@
 title: '{{ .Name | humanize | title }}'
 date: '{{ .Date }}'
 draft: true
-cover: '/img/cover.jpg'
+cover: 'img/cover.jpg'
 developer: ''
 release: ''
 price: ''
