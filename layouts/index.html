@@ -18,7 +18,7 @@
                         <section id="{{ $taxonomy_term }}" class="w-33">
                             <h3>{{ $taxonomy_term | humanize }}</h3>
                             <div class="dtc-ns tc pr4">
-                                <ul class="pl3">
+                                <ul class="pl3 tl">
                                 {{ range (first 10 $taxonomy.Pages) }}
                                     <li><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
                                 {{ end }}
